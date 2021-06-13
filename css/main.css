@@ -7,8 +7,8 @@
 :root{
     --color-primary: #1f1f1e;
     --color-secondary: #371168;
-    --dark: #212121;
-    --light: #F3F3F3;
+    --txt-black: #212121;
+    --txt-white: #F3F3F3;
 }
 
 /*==================================================================*/
@@ -23,7 +23,7 @@ body{
     margin: 100px auto 0;
     width: 400px;
     height: 500px;
-    perspective: 1000px; /* Remova a perspectiva se não quiser o efeito 3D! */
+    perspective: 1000px; /* Remova a perspectiva se não quiser o efeito 3D! Não esquecer de remover também no @media */
 }
 .card__inner { /* Esse conteiner posiciona frente e verso do card! */
     width: 100%;
@@ -62,7 +62,7 @@ body{
 
 /*==================================================================*/
 .card_face_back { /* Fundo do cartão! */
-    background-color: var(--light);
+    background-color: var(--txt-white);
     transform: rotateY(180deg);
 }
 .card_content { /* Conteúdo do fundo do cartão! */
@@ -98,17 +98,72 @@ body{
     padding: 30px;
 }
 .card_body h3 {
-    color: var(--dark);
+    color: var(--txt-black);
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 .card_body p {
-    color: var(--dark);
+    color: var(--txt-black);
     font-size: 18px;
-    line-height: 1,5;
+    line-height: 1.5;
 }
 
-@media  {
-    
+@media only screen and (max-width: 768px) {
+    .card{
+        margin: 100px auto 0;
+        width: 400px;
+        height: 580px;
+        perspective: 1000px; /* Remova a perspectiva se não quiser o efeito 3D! */
+    }
+    .card_header h2 {
+        color: #FFF;
+        font-size: 28px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .card_body {
+        padding: 20px;
+    }
+    .card_body h3 {
+        color: var(--txt-black);
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .card_body p {
+        color: var(--txt-black);
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .card{
+        margin: 100px auto 0;
+        width: 300px;
+        height: 550px;
+        perspective: 1000px; /* Remova a perspectiva se não quiser o efeito 3D! */
+    }
+    .card_header h2 {
+        color: #FFF;
+        font-size: 25px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .card_body {
+        padding: 20px;
+    }
+    .card_body h3 {
+        color: var(--txt-black);
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .card_body p {
+        color: var(--txt-black);
+        font-size: 15px;
+        line-height: 1.5;
+    }
 }
